@@ -31,6 +31,9 @@ namespace bank
                     case "5":
                         Depositar();
                         break;
+                    case "6":
+                        Excluir();
+                        break;
                     case "C":
                         Console.Clear();
                         break;
@@ -42,6 +45,14 @@ namespace bank
             }
             Console.WriteLine("Obrigado por utilizar nossos serviços.");
             Console.WriteLine();
+        }
+
+        private static void Excluir()
+        {
+            Console.Write("Digite o numero da conta para excluir: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            listContas.Remove(listContas[indiceConta]);
         }
 
         private static void Transferir()
@@ -130,6 +141,7 @@ namespace bank
             Console.WriteLine("3 - Transferir Valor");
             Console.WriteLine("4 - Sacar");
             Console.WriteLine("5 - Depositar");
+            Console.WriteLine("6 - Excluir");
             Console.WriteLine("C - Limpar Tela");
             Console.WriteLine("X - Sair");
             Console.WriteLine();
