@@ -30,14 +30,14 @@ namespace bank.Classes
                 return false;
             }
             Saldo -= saque;
-            Console.WriteLine("Saldo atual da conta de {0} é {1}", Nome, Saldo);
+            Console.WriteLine("Saldo atual da conta de {0} é R$ {1}", Nome, Saldo);
             return true;
         }
 
         public void Depositar(double deposito)
         {
             Saldo += deposito;
-            Console.WriteLine("Saldo atual da conta de {0} é {1}", Nome, Saldo);
+            Console.WriteLine("Saldo atual da conta de {0} é R$ {1}", Nome, Saldo);
         }
 
         public void Transferir(double vTransferencia, Conta destino)

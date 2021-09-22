@@ -23,13 +23,13 @@ namespace bank
                         InserirConta();
                         break;
                     case "3":
-                   //     Transferir();
+                        Transferir();
                         break;
                     case "4":
-                    //    Sacar();
+                        Sacar();
                         break;
                     case "5":
-                     //   Depositar();
+                        Depositar();
                         break;
                     case "C":
                         Console.Clear();
@@ -44,6 +44,41 @@ namespace bank
             Console.WriteLine();
         }
 
+        private static void Transferir()
+        {
+            Console.Write("Digite o numero da conta: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o numero da conta que recebera a transferencia: ");
+            int indiceContaT = int.Parse(Console.ReadLine());
+
+            Console.Write("Valor da transferencia: R$ ");
+            double valorTransferencia = double.Parse(Console.ReadLine());
+
+            listContas[indiceConta].Transferir(valorTransferencia,listContas[indiceContaT]);
+        }
+
+        private static void Depositar()
+        {
+            Console.Write("Digite o numero da conta: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            Console.Write("Valor de deposito: R$ ");
+            double valorDeposito = double.Parse(Console.ReadLine());
+
+            listContas[indiceConta].Depositar(valorDeposito);
+        }
+        private static void Sacar()
+        {
+            Console.Write("Digite o numero da conta: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            Console.Write("Valor de saque: R$ ");
+            double valorSaque = double.Parse(Console.ReadLine());
+
+            listContas[indiceConta].Sacar(valorSaque);
+
+        }
         private static void InserirConta()
         {
             Console.WriteLine("Inserir nova Conta: ");
